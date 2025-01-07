@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon-96x96.png') }}" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}" />
+    <link rel="manifest" href="{{ url_for('static', filename='img/site.webmanifest') }}" />
+    <title>Kauã Tiezzi - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/flyonui@1.3.0/dist/full.min.css" rel="stylesheet">
+
+
+  <!-- Adicionar o CSS do Swiper via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+  
+  <style>
+    /* Estilos personalizados */
+    .swiper {
+      width: 100%;
+      height: 320px; /* Ajuste a altura conforme necessário */
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background-color: #f0f0f0;
+    }
+    html {
+      color-scheme: light; /* Força o navegador a usar o tema claro */
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html {
+        background-color: #ffffff;
+        color: #000000;
+      }
+    }
+  </style>
+  
+</head>
+<script>
+    tailwind.config = {
+        darkMode: false,
+        theme: {
+            screens: {
+                sm: '640px',
+                md: '768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1536px',
+            },
+            fontFamily: {
+                'sans': ['ui-sans-serif', 'system-ui'],
+                'serif': ['ui-serif', 'Georgia'],
+                'mono': ['ui-monospace', 'SFMono-Regular'],
+            },
+            extend: {
+                colors: {
+                    verde: '#b2d12e',
+                    gold: '#FFD700',           // Dourado
+                    lightGray: '#fffff',       // Cinza Claro
+                    white: '#FFFFFF',          // Branco
+                    burgundy: '#800020',       // Vermelho Escuro
+                    black: '#000000',          // Preto
+                    lightBeige: '#F5F5DC',     // Bege Claro
+                },
+            },
+        },
+    }
+</script>
+</head>
+<body class="bg-lightGray dark:bg-lightGray font-sans min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-lightGray p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="text-xl font-bold flex items-center">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Online Store Logo" class="h-16">
+            </a>
+            <!-- Menu de navegação -->
+            <div class="flex space-x-8">
+                <a href="/" class="text-black hover:text-lightBeige">Página Inicial</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto py-12">
+        <h2 class="text-3xl font-bold text-center mb-8 text-black">Login</h2>
+        <form action="/admin/login" method="POST" class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <div class="mb-6">
+                <label for="username" class="block text-black font-semibold">Usuário:</label>
+                <input type="text" id="username" name="username" class="w-full border-gray-300 rounded-lg mt-2 p-2" required>
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-black font-semibold">Senha:</label>
+                <input type="password" id="password" name="password" class="w-full border-gray-300 rounded-lg mt-2 p-2" required>
+            </div>
+            <button type="submit" class="w-full bg-verde text-white py-3 px-6 rounded-lg hover:bg-black transition-colors duration-300 ease-in-out">
+                Logar
+            </button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white text-center py-4 mt-auto">
+        <p>&copy; 2025 Kauã Tiezzi. Todos os direitos reservados.</p>
+    </footer>
+    
+</body>
+</html>

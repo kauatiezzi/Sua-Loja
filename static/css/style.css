@@ -1,0 +1,12 @@
+/* Forçar o tema claro */
+html {
+    color-scheme: light;
+  }
+  
+  /* Ignorar a preferência do sistema */
+  @media (prefers-color-scheme: dark) {
+    html {
+      background-color: #fff;
+      color: #000;
+    }
+  }
