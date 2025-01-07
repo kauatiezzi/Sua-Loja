@@ -4,7 +4,7 @@ html {
   }
   
   /* Ignorar a preferência do sistema */
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: light) {
     html {
       background-color: #fff;
       color: #000;
